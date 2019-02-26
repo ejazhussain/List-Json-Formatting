@@ -1,0 +1,250 @@
+{
+  "schema": "https://developer.microsoft.com/json-schemas/sp/view-formatting.schema.json",
+  "hideSelection": true,
+  "hideListHeader": true,
+  "rowFormatter": {
+    "elmType": "div",
+    "style": {
+      "display": "flex",
+      "flex-wrap": "wrap",
+      "padding": "1.25rem",
+      "max-width": "300px",
+      "justify-content": "center",
+      "align-items": "center",
+      "margin-bottom": "16px",
+      "border-radius": "8px",
+      "box-shadow": "4px 4px 8px darkgrey"
+    },
+    "attributes": {
+      "class": "ms-bgColor-neutralLighter ms-fontColor-themePrimary"
+    },
+    "children": [
+      {
+        "elmType": "div",
+        "style": {
+          "flex-grow": "1",
+          "display": "flex",
+          "flex-direction": "row",
+          "flex-wrap": "wrap",
+          "align-items": "flex-end",
+          "justify-content": "center",
+          "align-items": "center"
+        },
+        "children": [
+          {
+            "elmType": "img",
+            "style": {
+              "display": "block",
+              "height": "auto",
+              "max-height": "128px",
+              "max-width": "128px",
+              "border-radius": "50%"
+            },
+            "attributes": {
+              "src": "=if([$Picture] == '', @currentWeb + '/_layouts/15/userphoto.aspx?size=M', [$Picture])",
+              "title": "=if([$Picture] == '', 'No picture available', [$Picture.desc])"
+            }
+          }
+        ]
+      },
+      {
+        "elmType": "div",
+        "style": {
+          "flex-grow": "1",
+          "display": "flex",
+          "flex-direction": "row",
+          "flex-wrap": "wrap",
+          "align-items": "center",
+          "justify-content": "center"
+        },
+        "children": [
+          {
+            "elmType": "div",
+            "style": {
+              "flex-grow": "1",
+              "display": "flex",
+              "flex-direction": "row",
+              "flex-wrap": "wrap",
+              "align-items": "center",
+              "justify-content": "center"
+            },
+            "children": [
+              {
+                "elmType": "div",
+                "style": {
+                  "width": "100%",
+                  "font-weight": "500",
+                  "font-size": "1.5rem",
+                  "display": "flex",
+                  "flex-direction": "row",
+                  "flex-wrap": "wrap",
+                  "flex": "1 0 auto",
+                  "align-items": "center",
+                  "justify-content": "center"
+                },
+                "txtContent": "[$User.title]"
+              },
+              {
+                "elmType": "div",
+                "style": {
+                  "width": "100%",
+                  "font-weight": "300",
+                  "font-size": "1.1em",
+                  "display": "flex",
+                  "flex-direction": "row",
+                  "flex-wrap": "wrap",
+                  "flex": "1 0 auto",
+                  "align-items": "center",
+                  "justify-content": "center"
+                },
+                "txtContent": "[$Job_x0020_Title]"
+              }
+            ]
+          },
+          {
+            "elmType": "div",
+            "style": {
+              "margin-top": "20px",
+              "height": "100%",
+              "text-align": "center",
+              "display": "flex",
+              "justify-content": "space-between",              
+              "flex-direction": "row",
+              "flex-wrap": "wrap",
+              "align-items": "center"
+            },
+            "children": [
+              {
+                "elmType": "span",
+                "style": {
+                  "height": "2rem",
+                  "width": "2rem",
+                  "font-size": "2em",
+                  "cursor": "pointer"
+                },
+                "children": [
+                  {
+                    "elmType": "a",
+                    "style": {
+                      "cursor": "pointer",
+                      "text-decoration":"none"
+                    },
+                    "attributes": {                      
+                      "class": "ms-fontColor-neutralPrimary ms-fontColor-themePrimary--hover",
+                      "iconName": "Mail",
+                      "href": "='mailto:' + [$User.email] + '?body=Dear ' + [$User.title] + ',\r\n'"
+                    }
+                  }
+                ]
+              },
+              {
+                "elmType": "span",
+                "style": {
+                  "height": "2rem",
+                  "width": "2rem",
+                  "font-size": "2em",
+                  "cursor": "pointer"
+                },
+                "children": [
+                  {
+                    "elmType": "a",
+                    "style": {
+                      "cursor": "pointer",
+                      "text-decoration":"none"
+                    },
+                    "attributes": {
+                      "class": "ms-fontColor-neutralPrimary ms-fontColor-themePrimary--hover",
+                      "iconName": "LinkedInLogo",
+                      "href": "=[$LinkedIn]"
+                    }
+                  }
+                ]
+              },
+              {
+                "elmType": "span",
+                "style": {
+                  "height": "2rem",
+                  "width": "2rem",
+                  "font-size": "2em",
+                  "cursor": "pointer"
+                },
+                "children": [
+                  {
+                    "elmType": "a",
+                    "style": {
+                      "cursor": "pointer",
+                      "text-decoration":"none"
+                    },
+                    "attributes": {
+                      "class": "ms-fontColor-neutralPrimary ms-fontColor-themePrimary--hover",
+                      "iconName": "ContactLink",
+                      "href": "=[$Twitter]"
+                    }
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "elmType": "div",
+        "style": {
+          "flex": "none",
+          "display": "flex",
+          "flex-direction": "row-reverse",
+          "flex-wrap": "nowrap",
+          "margin-top":"20px"
+        },
+        "children": [
+          {
+            "elmType": "button",
+            "customRowAction": {
+              "action": "delete"
+            },
+            "attributes": {
+              "title": "Delete",
+              "class": "ms-fontColor-neutralPrimary ms-fontColor-red--hover"
+            },
+            "style": {
+              "border": "none",
+              "background-color": "transparent",
+              "cursor": "pointer"
+            },
+            "children": [
+              {
+                "elmType": "span",
+                "attributes": {
+                  "iconName": "Delete"
+                }
+              }
+            ]
+          },
+          {
+            "elmType": "button",
+            "customRowAction": {
+              "action": "editProps"
+            },
+            "attributes": {
+              "title": "Edit",
+              "class": "ms-fontColor-neutralPrimary ms-fontColor-themePrimary--hover"
+            },
+            "style": {
+              "border": "none",
+              "background-color": "transparent",
+              "cursor": "pointer"
+            },
+            "children": [
+              {
+                "elmType": "span",
+                "attributes": {
+                  "iconName": "Edit"
+                }
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

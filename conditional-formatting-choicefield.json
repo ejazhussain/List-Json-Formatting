@@ -1,0 +1,26 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/sp/column-formatting.schema.json",
+  "elmType": "div",
+  "attributes": {    
+    "class": "=if(@currentField == 'Draft', 'sp-field-severity--good', if(@currentField == 'Level 1 Approved', 'sp-field-severity--good', if(@currentField == 'Level 2 Rejected', 'sp-field-severity--severeWarning', 'sp-field-severity--blocked'))) + ' ms-fontColor-neutralSecondary'"
+
+  },
+  "children": [
+    {
+      "elmType": "span",
+      "style": {
+        "display": "inline-block",
+        "padding": "0 4px"
+        
+      },
+      "attributes": {
+        "iconName": "=if(@currentField == 'Draft', 'CheckMark', if(@currentField == 'Level 1 Approved', 'Forward', if(@currentField == 'Level 1 Rejected', 'Warning', 'ErrorBadge')))"
+      }
+    },
+    {
+      "elmType": "span",
+      "txtContent": "@currentField"
+    }
+  ]
+}
+
