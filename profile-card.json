@@ -127,7 +127,8 @@
                     "elmType": "a",
                     "style": {
                       "cursor": "pointer",
-                      "text-decoration":"none"
+                      "text-decoration":"none",
+                      "color":"#e3008c"
                     },
                     "attributes": {                      
                       "class": "ms-fontColor-neutralPrimary ms-fontColor-themePrimary--hover",
@@ -150,7 +151,8 @@
                     "elmType": "a",
                     "style": {
                       "cursor": "pointer",
-                      "text-decoration":"none"
+                      "text-decoration":"none",
+                      "color":"#e3008c"
                     },
                     "attributes": {
                       "class": "ms-fontColor-neutralPrimary ms-fontColor-themePrimary--hover",
@@ -173,7 +175,8 @@
                     "elmType": "a",
                     "style": {
                       "cursor": "pointer",
-                      "text-decoration":"none"
+                      "text-decoration":"none",
+                      "color":"#e3008c"
                     },
                     "attributes": {
                       "class": "ms-fontColor-neutralPrimary ms-fontColor-themePrimary--hover",
