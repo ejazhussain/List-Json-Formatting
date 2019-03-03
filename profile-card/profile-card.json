@@ -5,97 +5,66 @@
   "rowFormatter": {
     "elmType": "div",
     "style": {
-      "display": "flex",
-      "flex-wrap": "wrap",
-      "padding": "1.25rem",
-      "max-width": "300px",
-      "justify-content": "center",
-      "align-items": "center",
-      "margin-bottom": "16px",
-      "border-radius": "8px",      
-      "box-shadow": "1px 10px 18px 0px #a6a6a6"
+      "float": "left"
     },
-    "attributes": {
-      "class": "ms-bgColor-neutralLighter ms-fontColor-themePrimary"
-    },
+    "attributes": {},
     "children": [
       {
         "elmType": "div",
         "style": {
-          "flex-grow": "1",
           "display": "flex",
-          "flex-direction": "row",
           "flex-wrap": "wrap",
-          "align-items": "flex-end",
-          "justify-content": "center",
-          "align-items": "center"
-        },
-        "children": [
-          {
-            "elmType": "img",
-            "style": {
-              "display": "block",
-              "height": "auto",
-              "max-height": "128px",
-              "max-width": "128px",
-              "border-radius": "50%"
-            },
-            "attributes": {
-              "src": "=if([$Picture] == '', @currentWeb + '/_layouts/15/userphoto.aspx?size=M', [$Picture])",
-              "title": "=if([$Picture] == '', 'No picture available', [$Picture.desc])"
-            }
-          }
-        ]
-      },
-      {
-        "elmType": "div",
-        "style": {
-          "flex-grow": "1",
-          "display": "flex",
-          "flex-direction": "row",
-          "flex-wrap": "wrap",
+          "flex-direction": "column",
           "align-items": "center",
-          "justify-content": "center"
+          "justify-content": "space-around",
+          "min-width": "300px",
+          "min-height": "286px",
+          "border-radius": "8px",
+          "margin-right": "10px",
+          "box-shadow": "2px 2px 4px darkgrey"
+        },
+        "attributes": {
+          "class": "ms-bgColor-neutralLighterAlt ms-bgColor-neutralLight--hover ms-fontColor-themePrimary--hover"
         },
         "children": [
           {
             "elmType": "div",
+            "children": [
+              {
+                "elmType": "img",
+                "style": {
+                  "display": "block",
+                  "height": "auto",
+                  "max-height": "96px",
+                  "max-width": "96px",
+                  "border-radius": "50%"
+                },
+                "attributes": {
+                  "src": "=if([$Picture] == '', @currentWeb + '/_layouts/15/userphoto.aspx?size=M', [$Picture])",
+                  "title": "=if([$Picture] == '', 'No picture available', [$Picture.desc])"
+                }
+              }
+            ]
+          },
+          {
+            "elmType": "div",
             "style": {
-              "flex-grow": "1",
-              "display": "flex",
-              "flex-direction": "row",
-              "flex-wrap": "wrap",
-              "align-items": "center",
-              "justify-content": "center"
+              "text-align": "center"
             },
             "children": [
               {
                 "elmType": "div",
                 "style": {
-                  "width": "100%",
                   "font-weight": "500",
-                  "font-size": "1.5rem",
-                  "display": "flex",
-                  "flex-direction": "row",
-                  "flex-wrap": "wrap",
-                  "flex": "1 0 auto",
-                  "align-items": "center",
-                  "justify-content": "center"
+                  "font-size": "1.5rem"
                 },
                 "txtContent": "[$User.title]"
               },
               {
                 "elmType": "div",
                 "style": {
-                  "width": "100%",
-                  "font-weight": "300",
-                  "font-size": "1.1em",
-                  "display": "flex",
-                  "flex-direction": "row",
-                  "flex-wrap": "wrap",
-                  "flex": "1 0 auto",
-                  "align-items": "center",
-                  "justify-content": "center"
+                  "font-weight": "500",
+                  "font-size": "1.1em"
                 },
                 "txtContent": "[$Job_x0020_Title]"
               }
@@ -103,16 +72,6 @@
           },
           {
             "elmType": "div",
-            "style": {
-              "margin-top": "20px",
-              "height": "100%",
-              "text-align": "center",
-              "display": "flex",
-              "justify-content": "space-between",              
-              "flex-direction": "row",
-              "flex-wrap": "wrap",
-              "align-items": "center"
-            },
             "children": [
               {
                 "elmType": "span",
@@ -120,19 +79,19 @@
                   "height": "2rem",
                   "width": "2rem",
                   "font-size": "2em",
-                  "cursor": "pointer"
+                  "cursor": "pointer",
+                  "margin": "0px 5px",
+                  "vertical-align": "text-bottom"
                 },
                 "children": [
                   {
                     "elmType": "a",
                     "style": {
-                      "cursor": "pointer",
-                      "text-decoration":"none",
-                      "color":"#e3008c"
+                      "cursor": "pointer"
                     },
-                    "attributes": {                      
-                      "class": "ms-fontColor-neutralPrimary ms-fontColor-themePrimary--hover",
-                      "iconName": "Mail",
+                    "attributes": {
+                      "class": "ms-fontColor-magentaLight",                        
+                      "iconName": "CreateMailRule",
                       "href": "='mailto:' + [$User.email] + '?body=Dear ' + [$User.title] + ',\r\n'"
                     }
                   }
@@ -144,18 +103,19 @@
                   "height": "2rem",
                   "width": "2rem",
                   "font-size": "2em",
-                  "cursor": "pointer"
-                },
+                  "cursor": "pointer",
+                  "margin": "0px 5px",
+                  "vertical-align": "text-bottom"
+                },                
                 "children": [
                   {
                     "elmType": "a",
                     "style": {
-                      "cursor": "pointer",
-                      "text-decoration":"none",
-                      "color":"#e3008c"
+                      "cursor": "pointer"
+                      
                     },
-                    "attributes": {
-                      "class": "ms-fontColor-neutralPrimary ms-fontColor-themePrimary--hover",
+                    "attributes": {   
+                      "class": "ms-fontColor-magentaLight",                        
                       "iconName": "LinkedInLogo",
                       "href": "=[$LinkedIn]"
                     }
@@ -168,81 +128,23 @@
                   "height": "2rem",
                   "width": "2rem",
                   "font-size": "2em",
-                  "cursor": "pointer"
+                  "cursor": "pointer",
+                  "margin": "0px 5px",
+                  "vertical-align": "text-bottom"
                 },
                 "children": [
                   {
                     "elmType": "a",
                     "style": {
-                      "cursor": "pointer",
-                      "text-decoration":"none",
-                      "color":"#e3008c"
+                      "cursor": "pointer"
                     },
                     "attributes": {
-                      "class": "ms-fontColor-neutralPrimary ms-fontColor-themePrimary--hover",
+                      "class": "ms-fontColor-magentaLight",                        
                       "iconName": "ContactLink",
                       "href": "=[$Twitter]"
                     }
                   }
                 ]
-              }
-            ]
-          }
-        ]
-      },
-      {
-        "elmType": "div",
-        "style": {
-          "flex": "none",
-          "display": "flex",
-          "flex-direction": "row-reverse",
-          "flex-wrap": "nowrap",
-          "margin-top":"20px"
-        },
-        "children": [
-          {
-            "elmType": "button",
-            "customRowAction": {
-              "action": "delete"
-            },
-            "attributes": {
-              "title": "Delete",
-              "class": "ms-fontColor-neutralPrimary ms-fontColor-red--hover"
-            },
-            "style": {
-              "border": "none",
-              "background-color": "transparent",
-              "cursor": "pointer"
-            },
-            "children": [
-              {
-                "elmType": "span",
-                "attributes": {
-                  "iconName": "Delete"
-                }
-              }
-            ]
-          },
-          {
-            "elmType": "button",
-            "customRowAction": {
-              "action": "editProps"
-            },
-            "attributes": {
-              "title": "Edit",
-              "class": "ms-fontColor-neutralPrimary ms-fontColor-themePrimary--hover"
-            },
-            "style": {
-              "border": "none",
-              "background-color": "transparent",
-              "cursor": "pointer"
-            },
-            "children": [
-              {
-                "elmType": "span",
-                "attributes": {
-                  "iconName": "Edit"
-                }
               }
             ]
           }
